@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build aplikasi menjadi binary bernama 'main'
-RUN go build -o main .
+RUN go build -p 1 -o main .
 
 # Gunakan image yang lebih ringan untuk menjalankan aplikasi
 FROM alpine:latest
