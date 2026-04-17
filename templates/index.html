@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #f4f9f4; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .hero-section { background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 100px 0; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
+        .btn-custom { background-color: #ffffff; color: #28a745; font-weight: bold; padding: 10px 30px; border-radius: 25px; transition: all 0.3s; }
+        .btn-custom:hover { background-color: #e2e6e9; color: #218838; transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .feature-icon { font-size: 3rem; color: #28a745; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #28a745;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/"><i class="bi bi-leaf"></i> Bersih Euy</a>
+            <div>
+                <a href="/login" class="btn btn-outline-light me-2">Masuk</a>
+                <a href="/register" class="btn btn-light text-success fw-bold">Daftar</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center shadow-sm mb-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Mari Jaga Lingkungan Kita!</h1>
+            <p class="lead mb-4">Laporkan tumpukan sampah liar di sekitarmu dengan mudah. Bersama kita ciptakan lingkungan yang bersih dan sehat.</p>
+            <a href="/register" class="btn btn-custom btn-lg shadow">Mulai Lapor Sekarang <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                    <i class="bi bi-camera feature-icon"></i>
+                    <h5 class="fw-bold">1. Foto Bukti</h5>
+                    <p class="text-muted">Ambil foto tumpukan sampah yang mengganggu di lingkunganmu.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                    <i class="bi bi-geo-alt feature-icon"></i>
+                    <h5 class="fw-bold">2. Tentukan Lokasi</h5>
+                    <p class="text-muted">Tuliskan lokasi dan deskripsi dengan jelas agar mudah ditemukan petugas.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                    <i class="bi bi-check-circle feature-icon"></i>
+                    <h5 class="fw-bold">3. Pantau Status</h5>
+                    <p class="text-muted">Pantau laporanmu hingga disetujui dan ditangani oleh pihak berwenang.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
