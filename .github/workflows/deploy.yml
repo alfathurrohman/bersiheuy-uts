@@ -3,21 +3,33 @@ name: Deploy ke AWS EC2
 on:
   push:
     branches:
-      - main  # Ganti ke 'master' jika branch utamamu bernama master
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Eksekusi Perintah di Server AWS via SSH
+      - name: Deploy ke EC2
         uses: appleboy/ssh-action@master
+
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+
           script: |
             cd ~/bersiheuy-uts
+
             git pull origin main
-            docker build -t bersiheuy-app .
-            docker rm -f $(docker ps -aq) || true
-            docker run -d --network="host" --env-file .env bersiheuy-app
+
+            sudo docker build -t bersiheuy-app .
+
+            sudo docker rm -f bersiheuy || true
+
+            sudo docker run -d \
+              --name bersiheuy \
+              --restart unless-stopped \
+              -p 8080:8080 \
+              --env-file .env \
+              bersiheuy-app
