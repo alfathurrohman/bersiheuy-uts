@@ -13,6 +13,8 @@ import (
         "github.com/alfathurrohman/bersiheuy/controllers"
         "github.com/alfathurrohman/bersiheuy/middlewares"
         "github.com/alfathurrohman/bersiheuy/models"
+
+	"os"
 )
 
 func main() {
@@ -28,7 +30,9 @@ func main() {
         r := gin.Default()
 
         // 3. Setup Session
-store := cookie.NewStore([]byte("rahasia-negara-bersiheuy"))
+sessionSecret := os.Getenv("SESSION_SECRET")
+
+store := cookie.NewStore([]byte(sessionSecret))
 store.Options(sessions.Options{
     Path:     "/",
     MaxAge:   86400, // Tiket berlaku 1 hari (dalam detik)
